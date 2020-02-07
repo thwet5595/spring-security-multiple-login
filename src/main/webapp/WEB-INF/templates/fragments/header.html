@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet"
+    media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Organization Name</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li th:classappend="${module == 'home' ? 'active':''}">
+                    <a href="
+						#organizations"
+                        th:href="@{/u/organizations}">Home</a>
+
+                </li>
+                <li
+                    th:classappend="${module == 'projects' ? 'active':''}">
+                    <a href="
+						#projects"
+                        th:href="@{/u/{organizationName}/projects(organizationName=${organizationName})}">Projects</a>
+                </li>
+                <li th:classappend="${module == 'boards' ? 'active':''}">
+                    <a href="
+						#boards"
+                        th:href="@{/u/{organizationName}/boards(organizationName=${organizationName})}">Boards</a>
+                </li>
+                <li th:classappend="${module == 'resources' ? 'active':''}">
+                    <a href="
+						#resources"
+                        th:href="@{/u/{organizationName}/resources(organizationName=${organizationName})}">Resources</a>
+                </li>
+                <li th:classappend="${module == 'events' ? 'active':''}">
+                    <a href="
+						#events"
+                        th:href="@{/u/{organizationName}/events(organizationName=${organizationName})}">Events</a>
+                </li>
+                <li
+                    th:classappend="${module == 'members' ? 'active':''}">
+                    <a href="
+						#members"
+                        th:href="@{/u/{organizationName}/members(organizationName=${organizationName})}">Members</a>
+                </li>
+            </ul>
+
+            <ul class="pull-right nav navbar-nav">
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </body>
+</html>
